@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f2f4ed">
+    <title>Local API Bench</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="masthead">
+        <a class="wordmark" href="/" aria-label="Local API Bench ホーム">
+          <span class="wordmark-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>LOCAL API BENCH</span>
+        </a>
+        <span class="local-indicator"><span aria-hidden="true"></span>ローカル環境</span>
+      </header>
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="section-label">API 接続テスト</p>
+          <h1 id="page-title">応答を、<br>確かめる。</h1>
+          <p class="intro-description">ボタンを押して、バックエンドの応答を確認します。</p>
+        </div>
+        <div class="intro-stamp" aria-hidden="true"><span>LOCAL</span><strong>↔</strong><span>API</span></div>
+      </section>
+      <section class="connection" aria-labelledby="connection-title">
+        <div class="connection-heading"><span class="connection-dot" aria-hidden="true"></span><h2 id="connection-title">接続先</h2></div>
+        <label class="url-field"><span class="visually-hidden">API のベース URL</span><input id="api-base-url" type="url" value="http://localhost:3000" inputmode="url" autocomplete="url" spellcheck="false"></label>
+        <span class="connection-note">ベース URL はこのブラウザーに保存されます</span>
+      </section>
+      <section class="requests" aria-labelledby="requests-title">
+        <div class="section-heading"><h2 id="requests-title">利用できる API</h2><span>GET リクエスト</span></div>
+        <div class="request-list">
+          <article class="request-row"><div class="request-icon" aria-hidden="true">◷</div><div class="request-description"><h3>現在時刻</h3><code>/api/time</code></div><p class="request-detail">サーバーの時刻を取得</p><button class="run-button" type="button" data-run="/api/time"><span>実行</span><span aria-hidden="true">↗</span></button></article>
+          <article class="request-row"><div class="request-icon" aria-hidden="true">Aa</div><div class="request-description"><h3>あいさつ</h3><code>/api/greet</code></div><p class="request-detail">サーバーからメッセージを取得</p><button class="run-button" type="button" data-run="/api/greet"><span>実行</span><span aria-hidden="true">↗</span></button></article>
+          <article class="request-row"><div class="request-icon" aria-hidden="true">⌘</div><div class="request-description"><h3>OS 情報</h3><code>/api/os</code></div><p class="request-detail">サーバーの OS 情報を取得</p><button class="run-button" type="button" data-run="/api/os"><span>実行</span><span aria-hidden="true">↗</span></button></article>
+        </div>
+      </section>
+      <section class="response" aria-labelledby="response-title">
+        <div class="response-header"><div class="response-heading"><span class="response-led" aria-hidden="true"></span><h2 id="response-title">レスポンス</h2></div><span id="response-status" class="response-status">待機中</span></div>
+        <div id="response-meta" class="response-meta">API を実行すると、ここに結果が表示されます。</div>
+        <pre id="response-output" class="response-output" aria-live="polite" aria-atomic="true">結果はまだありません。</pre>
+      </section>
+      <footer class="page-footer"><span>LOCAL API BENCH</span><span>認証なし · ローカルデモ</span></footer>
+    </main>
+  </body>
+</html>
